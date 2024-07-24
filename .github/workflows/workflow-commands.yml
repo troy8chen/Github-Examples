@@ -3,18 +3,16 @@ name: "Workflow Command"
 on: ['push']
 
 jobs:
-    my-job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "group logging"
-            run:
-                echo "::group::My group Message"
-                echo "Msg 1"
-                echo "Msg 2"
-                echo "::endgroup::"
-            - name: "step 1"
-            run:
-                echo "MY_VAL=hello" >> $GITHUB_ENV
-            - name: "step 2"
-            run:
-                echo $MY_VAL
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "group logging"
+        run: |
+          echo "::group::My group Message"
+          echo "Msg 1"
+          echo "Msg 2"
+          echo "::endgroup::"
+      - name: "step 1"
+        run: echo "MY_VAL=hello" >> $GITHUB_ENV
+      - name: "step 2"
+        run: echo $MY_VAL
