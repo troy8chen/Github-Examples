@@ -8,9 +8,9 @@ jobs:
         needs: job1
         steps:
             - name: StepA
-            -run: echo 'Hello'
+              run: echo 'Hello'
     job1:
         runs-on: ubuntu-latest
         steps:
-            - StepB
-            run: echo 'Hello'
+            - name: StepB
+              run: echo 'Hello'
